@@ -1,4 +1,4 @@
-# nquant.NET   
+# nQuant.NET   
 
 ## nQuant.NET is a color quantizer producing high quality indexed PNG images.   
 nQuant was originally developed as part of a larger effort called "RequestReduce" which is an HTTP module that automatically minified and merged CSS as well as their sprites on the fly.   

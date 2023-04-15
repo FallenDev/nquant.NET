@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nquant.NET", "nquant.NET\nquant.NET.csproj", "{79573AF7-C467-42AA-BC66-5BCADD409C2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79573AF7-C467-42AA-BC66-5BCADD409C2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79573AF7-C467-42AA-BC66-5BCADD409C2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79573AF7-C467-42AA-BC66-5BCADD409C2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79573AF7-C467-42AA-BC66-5BCADD409C2F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C5C296A0-840F-4189-AB5B-031296E335E5}
+	EndGlobalSection
+EndGlobal

@@ -20,23 +20,63 @@ public class Histogram
 public abstract class WuQuantizerBase
 {
     protected const byte AlphaColor = 255;
-    protected const int Alpha = 3;
-    protected const int Red = 2;
-    protected const int Green = 1;
-    protected const int Blue = 0;
+    private const int Alpha = 3;
+    private const int Red = 2;
+    private const int Green = 1;
+    private const int Blue = 0;
     private const int SideSize = 33;
     private const int MaxSideIndex = 32;
 
+    /// <summary>
+    /// An Implementation of Wu's Color Quantization Algorithm
+    /// Defaults Alpha Threshold to 10, and Alpha Fader to 70
+    /// 
+    /// alphaThreshold: This parameter sets a threshold value for the alpha channel.
+    /// Any pixel in the image with an alpha value below this threshold will be considered as fully transparent.
+    /// The value should be in the range of 0 to 255.
+    /// Lower values will result in more transparent pixels, while higher values will result in fewer transparent pixels.
+    ///
+    /// alphaFader: This parameter is a multiplier that is applied to the alpha values of the quantized image.
+    /// Values greater than 1 will increase the opacity of semi-transparent pixels, making them less transparent,
+    /// while values less than 1 will decrease the opacity, making them more transparent.
+    /// </summary>
     public Image QuantizeImage(Bitmap image)
     {
         return QuantizeImage(image, 10, 70);
     }
 
+    /// <summary>
+    /// An Implementation of Wu's Color Quantization Algorithm
+    /// Defaults: alphaThreshold 10, alphaFader 70
+    ///
+    /// alphaThreshold: This parameter sets a threshold value for the alpha channel.
+    /// Any pixel in the image with an alpha value below this threshold will be considered as fully transparent.
+    /// The value should be in the range of 0 to 255.
+    /// Lower values will result in more transparent pixels, while higher values will result in fewer transparent pixels.
+    ///
+    /// alphaFader: This parameter is a multiplier that is applied to the alpha values of the quantized image.
+    /// Values greater than 1 will increase the opacity of semi-transparent pixels, making them less transparent,
+    /// while values less than 1 will decrease the opacity, making them more transparent.
+    /// </summary>
     public Image QuantizeImage(Bitmap image, int alphaThreshold, int alphaFader)
     {
         return QuantizeImage(image, alphaThreshold, alphaFader, null, 256);
     }
 
+    /// <summary>
+    /// An Implementation of Wu's Color Quantization Algorithm
+    /// Defaults: alphaThreshold 10, alphaFader 70, histogram null, maxColors 256
+    /// You may build your own Histogram and pass it, or let the library use defaults
+    ///
+    /// alphaThreshold: This parameter sets a threshold value for the alpha channel.
+    /// Any pixel in the image with an alpha value below this threshold will be considered as fully transparent.
+    /// The value should be in the range of 0 to 255.
+    /// Lower values will result in more transparent pixels, while higher values will result in fewer transparent pixels.
+    ///
+    /// alphaFader: This parameter is a multiplier that is applied to the alpha values of the quantized image.
+    /// Values greater than 1 will increase the opacity of semi-transparent pixels, making them less transparent,
+    /// while values less than 1 will decrease the opacity, making them more transparent.
+    /// </summary>
     public Image QuantizeImage(Bitmap image, int alphaThreshold, int alphaFader, Histogram histogram, int maxColors)
     {
         var buffer = new ImageBuffer(image);

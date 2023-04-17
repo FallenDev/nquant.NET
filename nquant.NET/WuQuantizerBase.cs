@@ -80,11 +80,7 @@ public abstract class WuQuantizerBase
     public Image QuantizeImage(Bitmap image, int alphaThreshold, int alphaFader, Histogram histogram, int maxColors)
     {
         var buffer = new ImageBuffer(image);
-
-        if (histogram == null)
-            histogram = new Histogram();
-        else
-            histogram.Clear();
+        histogram.Clear();
 
         BuildHistogram(histogram, buffer, alphaThreshold, alphaFader);
         CalculateMoments(histogram.Moments);
